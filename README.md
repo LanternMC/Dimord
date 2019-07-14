@@ -1,5 +1,7 @@
 # Dimord
 
+![Dimord Image](https://lanternmc.com/dimord/repo.png)
+
 Dimord is a simple Minecraft data pack that outputs the order that
 dimension-specific ticks execute in to all connected players on world (re)load.
 
