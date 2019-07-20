@@ -2,13 +2,13 @@
 # of dimensions that executed in the past tick.
 execute if score dimord.state lantern.const matches 0 store result score dimord.state lantern.const run data get block -30000000 0 8880 Book.tag.dimord
 
-# Reset order tag if it has 1..2 values, then reset Dimord state to 0.
-execute if score dimord.state lantern.const matches 1..2 run data modify block -30000000 0 8880 Book.tag.dimord set value []
-execute if score dimord.state lantern.const matches 1..2 run scoreboard players set dimord.state lantern.const 0
-
 # If there is no online player, reset Dimord state to 0, as there needs to be a
 # player to send the dimension tick order to.
 execute unless entity @a[limit=1] run scoreboard players set dimord.state lantern.const 0
+
+# Reset order tag unless the tag has 3 values and a player is online.
+execute if score dimord.state lantern.const matches 0..2 run data modify block -30000000 0 8880 Book.tag.dimord set value []
+execute if score dimord.state lantern.const matches 1..2 run scoreboard players set dimord.state lantern.const 0
 
 # If order tracking tag has 3.. values, tellraw the first three, then set Dimord
 # state to -1 to halt execution.
