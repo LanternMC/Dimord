@@ -1,6 +1,6 @@
 {
     "pack": {
         "pack_format": 4,
-        "description": "View the order in which dimension ticks execute"
+        "description": "Lantern Dimension Tick Test (1.0.1)"
     }
 }
